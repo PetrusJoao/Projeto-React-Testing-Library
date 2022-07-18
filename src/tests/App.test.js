@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import App from '../App';
 import renderWithRouter from './renderWithRouter';
 
-test('Teste se O primeiro link deve possuir o texto Home',
+test('Teste se o primeiro link deve possuir o texto Home',
   () => {
     const { history } = renderWithRouter(<App />);
 
@@ -19,7 +19,7 @@ test('Teste se O primeiro link deve possuir o texto Home',
     expect(homeTitle).toBeInTheDocument();
   });
 
-test('O segundo link deve possuir o texto About',
+test('Teste se o segundo link deve possuir o texto About',
   () => {
     const { history } = renderWithRouter(<App />);
 
@@ -34,7 +34,7 @@ test('O segundo link deve possuir o texto About',
     expect(aboutTitle).toBeInTheDocument();
   });
 
-test('O terceiro link deve possuir o texto Favorite Pokémons',
+test('Teste se o terceiro link deve possuir o texto Favorite Pokémons',
   () => {
     const { history } = renderWithRouter(<App />);
 
