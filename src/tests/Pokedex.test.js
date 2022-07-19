@@ -48,7 +48,8 @@ test('Teste se a Pokédex tem os botões de filtro', () => {
   expect(buttonNext).toBeInTheDocument();
 
   const dataTest = screen.getAllByTestId('pokemon-type-button');
-  expect(dataTest).toHaveLength(7);
+  const times = 7;
+  expect(dataTest).toHaveLength(times);
 });
 
 test('Teste se a Pokédex contém um botão para resetar o filtro', () => {
