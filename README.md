@@ -408,5 +408,3 @@ Implemente os requisitos propostos a seguir e escreva testes para eles. Tente ma
 
     - Ao clicar no link, a página com informações sobre a geração clicada deve ser exibida.
   </details>
-
--->
