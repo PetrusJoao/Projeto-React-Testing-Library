@@ -1,20 +1,143 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# Projeto React Testing Library
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+<details>
+  <summary><strong>👨‍💻 O que foi desenvolvido</strong></summary><br />
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
----------------------------------------------------------------------------------------------------------------------------
+  - Nesse projeto foram escritos testes para uma aplicação React que já está criada e configurada, utilizando [`Jest`](https://jestjs.io/) e a biblioteca [`React Testing Library`](https://testing-library.com/).
+ 
+  - A aplicação contém uma implementação completa de todos os requisitos da Pokédex. O desafio foi que, para cada requisito listado, escrever testes que garantam sua corretude. Tomando cuidado com [testes _falsos positivos_](https://talkingabouttesting.com/2015/08/04/falsos-negativos-falsos-positivos-verdadeiros-negativos-e-verdadeiros-positivos/). Falsos positivos seriam desconsiderados na avaliação.
+</details>
+
+<details>
+  <summary><strong>:memo: Habilidades</strong></summary><br />
+
+  Neste projeto, foi verificado se você o desenvolvedor era/é capaz de:
+
+  * Utilizar os seletores (queries) da React-Testing-Library em testes automatizados;
+
+  * Simular eventos com a React-Testing-Library em testes automatizados;
+
+  * Testar fluxos lógicos assíncronos com a React-Testing-Library;
+
+  * Escrever testes que permitam a refatoração da estrutura dos componentes da aplicação sem necessidade de serem alterados;
+
+  * Testar inputs.
+</details>
+
+# Orientações
+
+<details>
+  <summary><strong>‼️ Caso queira rodar/editar em sua máquina</strong></summary><br />
+
+1. Clone o repositório
+
+2. Instale as dependências e inicialize o projeto:
+    * `npm install`
+
+3. Crie uma branch a partir da branch `main`
+  * Verifique que você está na branch `main`
+    * Exemplo: `git branch`
+  * Se não estiver, mude para a branch `main`
+    * Exemplo: `git checkout main`
+  * Agora, crie uma branch onde você vai guardar os `commits` do seu projeto
+    * Você deve criar uma branch no seguinte formato: `nome-sobrenome-nome-do-projeto`
+    * Exemplo: `git checkout -b fulano(a)-detal-shopping-cart`
+
+4. Quando fizer mudanças, adicione-as ao _stage_ do Git e faça um `commit`
+  * Verifique que as mudanças ainda não estão no _stage_
+    * Exemplo: `git status` (deve aparecer as alterações realizadas em vermelho)
+  * Adicione o novo arquivo ao _stage_ do Git
+      * Exemplo:
+        * `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
+        * `git status` (deve aparecer listado os arquivos em verde)
+  * Faça o `commit` inicial
+      * Exemplo:
+        * `git commit -m 'iniciando o projeto. VAMOS COM TUDO :rocket:'` (fazendo o primeiro commit)
+        * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
+
+5. Adicione a sua branch com o novo `commit` ao repositório remoto
+  * Usando o exemplo anterior: `git push -u origin fulano(a)-detal-shopping-cart`
+
+6. Crie um novo `Pull Request` _(PR)_
+  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-022-a-project-shopping-cart/pulls)
+  * Clique no botão verde _"New pull request"_
+  * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
+    * Coloque um título para a sua _Pull Request_
+    * Exemplo: _"Cria tela de busca"_
+  * Clique no botão verde _"Create pull request"_
+  * Adicione uma descrição para o _Pull Request_, um título claro que o identifique, e clique no botão verde _"Create pull request"_
+
+</details>
+
+<details>
+  <summary><strong>🎛 Linter</strong></summary><br />
+### ESLint e Stylelint
+
+Para garantir a qualidade do código, utilizou-se neste projeto os linters `ESLint` e `Stylelint`.
+Assim o código estará alinhado com as boas práticas de desenvolvimento, sendo mais legível
+e de fácil manutenção!
+
+Para poder rodar o `ESLint` e o `Stylelint` certifique-se de ter executado o comando `npm install` dentro do projeto.
+
+Para rodá-los localmente no projeto, execute os comandos abaixo:
+
+```bash
+  npm run lint
+  npm run lint:styles
+```
+
+Se a análise do `ESLint` e do `Stylelint` encontrarem problemas no seu código, tais problemas serão mostrados no seu terminal. Se não houver problema no seu código, nada será impresso no seu terminal.
+
+Você pode também instalar o plugin do `ESLint` no VSCode. Para isso, basta fazer o download do plugin `ESLint` e instalá-lo.
+
+Em caso de dúvidas, confira o material do course sobre [ESLint e Stylelint](https://app.betrybe.com/course/real-life-engineer/eslint).
+
+</details>
+
+<details>
+  <summary><strong>🛠 Testes</strong></summary><br />
+
+  Neste projeto vocêfoi desenvolvido os testes de uma aplicação React.
+
+  ### Quem testa os testes?
+
+  O avaliador automatizado **testará os testes!** A ideia dele é a seguinte: o desenvolvedor escreve casos de teste para a aplicação, certo? E esses testes têm que garantir que a aplicação está funcionando, certo? Pois bem! Se é quebrada uma parte da aplicação, fazendo uma alteração no código, os testes devem quebrar, certo? Pois é isso que o avaliador faz!
+  
+  Pense da seguinte forma: o avaliador vai navegar por toda a aplicação da Pokédex e vai fazer várias mudanças no código **para que ela quebre e pare de funcionar**. Em seguida ele vai rodar seus testes. Caso seus testes não acusem que a aplicação está com problemas, o avaliador não vai aprovar aquele requisito! Se, para todas as alterações que o avaliador fizer no código da aplicação, os seus testes acusarem problemas, tudo será aprovado! O avaliador garante, portanto, que seus testes, de fato, testam a aplicação da Pokédex como se deve.
+  
+  Na linguagem do avaliador, dizemos que cada mudança que o avaliador faz na sua aplicação é um **mutante**. O avaliador cria vários mutantes e seus testes **devem matar todos!** Se algum mutante sobreviver, temos problemas. Certo? Vamos aos requisitos então!
+
+  ### Executando os testes localmente
+
+  - Há uma pasta chamada `./stryker` com diversos arquivos `nomeArquivo.conf.json`. Cada um deles é a configuração do avaliador para um requisito e ela **não deve ser alterada**. 
+  
+  - Após finalizar os testes unitários de um arquivo, para testá-lo individualmente, execute o comando abaixo:
+  ```bash
+  npx stryker run ./stryker/nomeDoArquivo.conf.json
+  ```
+
+  - Por exemplo:
+    - Passo 1: _"Acabei de fazer os testes unitários do arquivo `PokemonDetails.test.js`!"_
+    - Passo 2: _"Vou rodar os meus testes para ver se eles estão todos passando!"_
+    - Passo 3: _"Agora vou rodar o comando para o requisito com `npx stryker run ./stryker/PokemonDetails.conf.json`!"_
+    * Com o comando acima, ele vai executar o Stryker e verificar se os seus testes unitários estão corretos.
+
+  - Quando o comando `npx stryker run ./stryker/PokemonDetails.conf.json` for executado, com todos os testes passando, o avaliador apresentará uma saída semelhante à abaixo.
+
+    ![image](testepassando.png)
+    
+  - Uma falha ocorre quando os testes unitários não cobrem 100% de caso de uso gerados pelo Stryker. Nesse caso, algo semelhante à imagem abaixo aparecerá.
+
+    ![image](testefalhando.png)
+    
+  * Repare que, na tabela, 4 casos de uso constam como `Killed` e 3 constam como `Survived`. Isso significa que **3 casos de uso não foram contemplados pelos seus testes**! Os casos de uso, que geraram os erros, aparecem acima. Na linha verde (ao lado de cada símbolo `+`), o Stryker exibe o erro que ele injetou no teste para testar um caso de uso. Esse erro não foi coberto pelo seu teste.
+
+  ⚠️ **O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?**
+</details>
 
 # Requisitos
 
-:warning: **PULL REQUESTS COM ERROS DE LINTER NÃO SERÃO AVALIADAS.** :warning:
+:warning: **PULL REQUESTS COM ERROS DE LINTER NÃO FORAM AVALIADAS.** :warning:
 
 ## 1. Teste o componente `<App.js />`
 
